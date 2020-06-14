@@ -22,13 +22,15 @@
         <div class="spacer"></div>
         <div class="dropdown">
             <div class="dropdown-button mx-3">
-                <span class="ml-3">Usuario Teste</span>
+                <span class="ml-3">
+                    <?= $_SESSION['user']->name ?>
+                </span>
                 <i class="icofont-simple-down ml-2"></i>
             </div>
                     <div class="dropdown-content">
                         <ul class="nav-list">
                             <li class="nav-item">
-                                <a href="#">
+                                <a href="logout.php">
                                     <i class="icofont-logout mr-2"> 
                                         <span>Sair</span>
                                     </i>

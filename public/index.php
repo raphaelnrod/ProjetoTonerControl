@@ -7,7 +7,7 @@ $uri = urldecode(
 );
 
 if ($uri === '/' || $uri === '' || $uri === '/index.php') {
-     $uri = '/login_control.php';
+     $uri = '/main_screen.php';
 }
 
 require_once(CONTROLLER_PATH . "/{$uri}");

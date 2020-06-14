@@ -20,6 +20,8 @@ body.hide-sidebar{
 }
 
 header.header{
+    position: fixed;
+    width: 100%;
     grid-area: header;
     display: flex;
     background-color: #1976D2;
@@ -114,41 +116,11 @@ aside.sidebar{
 aside.sidebar .menu{
     width: 100%;
     flex-grow: 1;
-    padding-top: 3px;
+    padding-top: 2px;
 }
 
-aside.sidebar .sidebar-widget{
-    display: flex;
-    align-items: center;
-}
-
-aside.sidebar .sidebar-widgets{
+aside.sidebar .menu ul.nav-list{    
     position: sticky;
-    bottom: 10px;
-}
-
-aside.sidebar .sidebar-widget .icon{
-    font-size: 3.5rem;
-    margin: 2px 10px 2px 0px;
-}
-
-aside.sidebar .sidebar-widget .info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
-
-aside.sidebar .info .main{
-    font-size: 2rem;
-}
-
-.division{
-    widows: 80%;
-    border: solid 1px #eee;
-}
-
-aside.sidebar .menu ul.nav-list{
     list-style: none;
     padding: 0;
     margin: 0;
@@ -178,16 +150,40 @@ aside.sidebar .menu li.nav-item span{
 }
 
 main.content{
+    position: relative;
+    background-color: #fff;
     grid-area: content;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,.2);
 }
 
 main.content .content-title{
-    display: flex-start;
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #CCC;
 }
 
 main.content .content-title p{
-    font-size: 2rem;
+    font-size: 1.8rem;
+    color: rgb(20, 20, 20);
+    font-weight: 400;
+    margin: 0;
+}
+
+main.content .content-title span{
+    font-size: 1rem;
+    color: #444;
+    font-weight: 400;
+    margin: 0;
+}
+
+main.content .content-table{
+    display: flex;
+    font-size: 0.9rem;
+    border-top: 0;
 }
 
 footer.footer{
