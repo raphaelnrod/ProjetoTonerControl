@@ -23,9 +23,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
-                    <i class="icofont-users mr-3">
-                        <span class="title-button ml-2">Usuários</span>  
+                <a href="cadastro.php">
+                    <i class="icofont-ui-add mr-3">
+                        <span class="title-button ml-2">Cadastro</span>  
                     </i>
                 </a>
             </li>

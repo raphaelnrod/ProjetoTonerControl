@@ -1,0 +1,23 @@
+.button-inside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-cadastro{
+    border-radius: 5px;
+    box-shadow: -4px 4px 5px 0px rgba(0,0,0,0.75);
+    width: 100%;
+}
+
+.btn-cadastro:hover{
+    background-color: rgba(205, 227, 255, 0.966);
+}
+
+.icone{
+    font-size: 2.2rem;
+}
+
+.icon-text{
+    font-size: 1.4rem;
+}
