@@ -1,6 +1,5 @@
-USE TONERCONTROL;
+USE toner_control;
 
-DROP TABLE IF EXISTS secretaria, impressora, toner, users;
 CREATE TABLE users (
     id INT(6) AUTO_INCREMENT PRIMARY KEY, 
     name VARCHAR(100) NOT NULL,
@@ -11,25 +10,31 @@ CREATE TABLE users (
 CREATE TABLE setor (
     id INT(6) AUTO_INCREMENT PRIMARY KEY, 
     name VARCHAR(100) NOT NULL,
-    secretaria VARCHAR(100), NOT NULL
+    secretaria VARCHAR(100) NOT NULL
 );
 CREATE TABLE impressora (
     id INT(6) AUTO_INCREMENT PRIMARY KEY, 
     setor_id INT(6),
-    name VARCHAR(100) NOT NULL
-
+    name VARCHAR(100) NOT NULL,
+    valor_atual INT(10) NOT NULL,
     FOREIGN KEY (setor_id) REFERENCES setor(id)
 );
+
+CREATE TABLE registro (
+    id INT(6) AUTO_INCREMENT PRIMARY KEY,
+    impressora_id INT(6),
+    data_registro DATE NOT NULL,
+    rendimento INT(10),
+    FOREIGN KEY (impressora_id) REFERENCES impressora(id),
+    CONSTRAINT cons_registry UNIQUE (impressora_id, data_registro)
+);
+
 CREATE TABLE toner (
     id INT(6) AUTO_INCREMENT PRIMARY KEY, 
-    impressora_id INT(6),
-    name VARCHAR(100) NOT NULL,
-    qtde_impress_atual INT(8) NOT NULL,
-    qtde_impress_toner INT,
-    recarregado BOOLEAN NOT NULL DEFAULT false
-
-    FOREIGN KEY (impressora_id) REFERENCES impressora(id)
-    CONSTRAINT cons_qtd_imprimida UNIQUE (impressora_id, qtde_impress_toner)
+    imp_id INT(6),
+    modelo VARCHAR(100) NOT NULL,
+    recarregado BOOLEAN NOT NULL,
+    FOREIGN KEY (imp_id) REFERENCES impressora(id)
 );
 
 -- Essa senha criptografada corresponde ao valor "a"
